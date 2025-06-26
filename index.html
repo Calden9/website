@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click for Cool Sh*t</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      background-color: red;
+      color: white;
+      font-size: 24px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    button:hover {
+      background-color: darkred;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+    .product {
+      margin-top: 20px;
+    }
+    .link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: blue;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .link:hover {
+      background: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showProduct()">Click for cool sh*t</button>
+  <div class="product" id="product"></div>
+
+  <script>
+    const products = [
+      {
+        title: "Mini Flame Thrower",
+        image: "https://example.com/flamethrower.jpg",
+        link: "https://amzn.to/flamethrower"
+      },
+      {
+        title: "Levitating Speaker",
+        image: "https://example.com/levitating-speaker.jpg",
+        link: "https://amzn.to/levitating-speaker"
+      },
+      {
+        title: "Pocket-Sized Drone",
+        image: "https://example.com/pocket-drone.jpg",
+        link: "https://amzn.to/pocket-drone"
+      },
+      {
+        title: "Laser Projection Keyboard",
+        image: "https://example.com/laser-keyboard.jpg",
+        link: "https://amzn.to/laser-keyboard"
+      },
+      {
+        title: "Moon Lamp",
+        image: "https://example.com/moon-lamp.jpg",
+        link: "https://amzn.to/moon-lamp"
+      }
+    ];
+
+    function showProduct() {
+      const p = products[Math.floor(Math.random() * products.length)];
+      document.getElementById("product").innerHTML = `
+        <h2>${p.title}</h2>
+        <img src="${p.image}" alt="${p.title}" />
+        <br />
+        <a class="link" href="${p.link}" target="_blank">I want this</a>
+      `;
+    }
+  </script>
+</body>
+</html>
